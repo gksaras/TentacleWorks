@@ -1,0 +1,41 @@
+package coupling;
+
+class Marvel {
+	
+	void phase_5() {
+		
+		Disney d = new Disney();
+		d.stream();
+		
+		System.out.println("Loki-Season-2");
+	}
+}
+
+class Disney{
+	
+	void stream() {
+		
+		System.out.println("Streaming on October-6");
+	}
+}
+
+class MarvelStudios{
+	
+	void produce_$(double cost) {
+		System.out.println(cost);
+	}
+}
+
+public class TightCoupling {
+
+	public static void main(String[] args) {
+		
+		Marvel m = new Marvel();
+		m.phase_5();
+		
+		MarvelStudios s = new MarvelStudios();
+		s.produce_$(10_00_000);
+		
+	}
+	
+}

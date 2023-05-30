@@ -1,0 +1,56 @@
+package other;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+class Transaction{
+	
+	private LocalDate date;
+	private double amount;
+	private String description;
+	
+	public Transaction(LocalDate date,double amount,String description) {
+	
+		this.date = date;
+		this.amount = amount;
+		this.description = description;
+	}
+
+	public LocalDate getDate() {
+		return date;
+	}
+
+	public double getAmount() {
+		return amount;
+	}
+
+	public String getDescription() {
+		return description;
+	}	
+}
+
+
+public class BankingStatement {
+
+	static String csvFile = "E:\\bank.csv";
+	static String txtFile = "E:\\Report.txt";
+	public static void main(String[] args) {
+		
+	}
+	
+	public static void display_Transactions() throws IOException {
+		
+		List<Transaction> transact = new ArrayList<>();
+		
+		try(BufferedReader read = new BufferedReader(new FileReader(csvFile));
+			FileWriter txt = new FileWriter(txtFile)	){
+			
+		}
+	}
+	
+}

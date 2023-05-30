@@ -1,0 +1,16 @@
+package com.springverse.SpringDemo;
+
+
+import org.junit.Test;
+
+/**
+ * Unit test for simple App.
+ */
+
+//@ExtendWith(SpringExtension.class)
+//@ContextCon
+public class AppTest 
+{
+
+	
+}

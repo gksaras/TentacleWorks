@@ -1,0 +1,19 @@
+package com.springverse.SpringDemo;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello World!" );
+        
+        var context = new AnnotationConfigApplicationContext();
+        
+        Sparrow s = new Sparrow();
+    }
+}

@@ -1,0 +1,21 @@
+package com.bankanalyzer.BankStatementAnalyzer_Gokulnath_K;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class Report extends Summarize {
+
+	
+	String csvFile = "E:\\"
+	void generate_Report(String csvFile) throws IOException {
+		
+		Transaction 
+		
+		BufferedWriter bf = new BufferedWriter(new FileWriter("E:\\Report.txt"));
+		
+		bf.write();
+		
+	}
+}

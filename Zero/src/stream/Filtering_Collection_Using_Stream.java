@@ -1,0 +1,49 @@
+
+package stream;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+class ProductLaptop{
+	
+	int id;
+	String name;
+	float price;
+	
+	public ProductLaptop(int id,String name,float price) {
+		this.id=id;
+		this.name=name;
+		this.price=price;
+	}
+}
+
+public class Filtering_Collection_Using_Stream {
+
+	public static void main(String[] args) {
+		
+		List<ProductLaptop > productList = new ArrayList<>();
+		
+		productList.add(new ProductLaptop(1, "Redmi", 45_000.500f ));
+		productList.add(new ProductLaptop(2, "Realme", 35_000.250f ));
+		productList.add(new ProductLaptop(3, "HP", 40_000.750f ));
+		productList.add(new ProductLaptop(4, "Dell", 65_000.250f ));
+		productList.add(new ProductLaptop(5, "Lenovo", 30_000.500f ));
+		
+		productList.stream().filter(product->product.price==30000).forEach(product->System.out.println(product.name));
+		
+		ProductLaptop productLaptopMax = productList.stream().max((p1,p2)->p1.price>p2.price?1:-1).get();
+		System.out.println(productLaptopMax.price);
+		
+		ProductLaptop productLaptopMin = productList.stream().min((p1,p2)->p1.price>p2.price?1:-1).get();
+		System.out.println(productLaptopMin.price);
+		
+		long count = productList.stream().filter(product->product.price>30000).count();
+		System.out.println(count);
+		
+		// Sum by using Collectors methods
+		Double collect = productList.stream().collect(Collectors.summingDouble(product->product.price));
+		System.out.println(collect);
+		
+	}
+}

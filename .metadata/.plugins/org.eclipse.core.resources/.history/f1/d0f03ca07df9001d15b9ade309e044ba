@@ -1,0 +1,6 @@
+package com.bankanalyzer.BankStatementAnalyzer_Gokulnath_K;
+
+public interface FilterData {
+
+	void filter();
+}

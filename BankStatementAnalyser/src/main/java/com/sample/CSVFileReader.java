@@ -1,0 +1,41 @@
+package com.sample;
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+
+import com.opencsv.CSVReader;
+
+public class CSVFileReader {
+
+	public  void readCSV_And_Summarize( String csvFile) throws NumberFormatException, IOException {
+
+
+		DateTimeFormatter DATE_PATTERN = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+		ArrayList<Transaction> transactionList = new ArrayList<Transaction>();
+			
+		CSVReader reader = null;
+
+			reader = new CSVReader(new FileReader(csvFile));
+			String[] line;
+			while ((line = reader.readNext()) != null) {
+				
+				 System.out.println("date = "+line[0]+", amount = "+line[1]+", description ="+line[2]);
+				
+				Transaction transact = new Transaction();
+				transact.setDate(LocalDate.parse(line[0], DATE_PATTERN));
+				transact.setAmount(Double.parseDouble(line[1]));
+				transact.setDescription(line[2]);
+				transactionList.add(transact);
+				
+			}	
+		
+		FilterAndSummarize f = new FilterAndSummarize();
+		f.calculate(transactionList);
+
+	}
+	
+}

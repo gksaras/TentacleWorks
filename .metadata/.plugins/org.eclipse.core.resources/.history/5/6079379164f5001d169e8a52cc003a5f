@@ -1,0 +1,35 @@
+package com.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class GettingDataForAColumn {
+
+	public static void main(String[] args) throws SQLException {
+		
+		Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sakila","root","Gokul@2023");
+		
+		var query = "SELECT actor_id,first_name,last_name from actor";
+		
+		try(var ps = connect.prepareStatement(query);
+				var rs = ps.executeQuery()){
+			while (rs.next()) {
+				Object id = rs.getObject("actor_id");
+				Object fname = rs.getObject("first_name");
+				Object lname = rs.getObject("last_name");
+				
+				if (id instanceof Integer actor_id) {
+					System.out.print(actor_id);
+				}
+				if (fname instanceof String first_name) {
+					System.out.print(" "+first_name);
+				}
+				if (lname instanceof String last_name) {
+					System.out.print(" "+last_name);
+				}
+				System.out.println();
+			}
+		}
+	}
+}

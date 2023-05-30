@@ -1,0 +1,17 @@
+package com.practice;
+
+public class Main {
+
+	static void test_1() {
+		int count = 1;
+		while(count <= 15) {
+			System.out.print(count%2==0? "*":"+" + "\n");
+			count++;
+			//System.out.println();
+		}
+	}
+	
+	public static void main(String[] args) {
+			test_1();
+	}
+}

@@ -1,0 +1,40 @@
+package com.springverse.SpringDemo.config;
+
+import java.time.format.DateTimeFormatter;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.springverse.SpringDemo.classes.Marvel;
+import com.springverse.SpringDemo.classes.Sparrow;
+
+import java.time.LocalDate;
+
+@Configuration
+public class SpringConfig {
+
+	@Bean
+	Sparrow parley() {
+		
+		var s = new Sparrow();
+		s.setName("Jack");
+		return s;
+	}
+	
+	@Bean
+	String caribbean_Ship() {
+		return "Black Pearl";
+	}
+	
+	@Bean
+	Integer universe_Number() {
+		return 616;
+	}
+	
+	@Bean
+	Marvel display() {
+		var m =  new Marvel(5, "Loki","2023-10-06");
+		m.toString();
+		return m;
+	}
+}

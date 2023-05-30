@@ -1,0 +1,13 @@
+package com.bankanalyzer.BankStatementAnalyzer_Gokulnath_K;
+
+import java.io.FileWriter;
+import java.io.Writer;
+import java.nio.file.Files;
+
+public class CSVDesign {
+
+	void createFile_And_Write() {
+		
+	
+	}
+}

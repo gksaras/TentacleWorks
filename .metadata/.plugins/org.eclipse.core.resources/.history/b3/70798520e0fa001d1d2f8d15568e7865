@@ -1,0 +1,25 @@
+package coupling;
+
+class Marvel {
+	
+	void phase_5() {
+		
+		Disney d = new Disney();
+		d.distribute();
+		
+		System.out.println("Loki-2");
+	}
+}
+
+class Disney{
+	
+	void distribute() {
+		
+		System.out.println("Streaming on October-6");
+	}
+}
+
+public class TightCoupling {
+
+	
+}

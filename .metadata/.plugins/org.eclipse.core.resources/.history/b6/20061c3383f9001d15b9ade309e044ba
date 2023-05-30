@@ -1,0 +1,33 @@
+package com.sample;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+public class FilterAndSummarize {
+
+	
+	
+	void calculate(ArrayList<Transaction> List) {
+			
+	double sum = 0;
+	int count = 0;
+	
+	for (Transaction bank : List) {
+	
+		if (bank.getDate().equals(LocalDate.of(2022, 05, 30))) {
+
+			System.out.print("date = " + bank.getDate() + ", ");
+			System.out.print("amount = " + bank.getAmount() + ", ");
+			System.out.print("description = " + bank.getDescription());
+			System.out.println();
+
+			sum += bank.getAmount();
+			count++;
+		}
+	}
+	System.out.println();
+	System.out.println("Sum of all Transaction => " + sum);
+	System.out.println("Average of all Sum => " + sum / count);
+	
+	}	
+}

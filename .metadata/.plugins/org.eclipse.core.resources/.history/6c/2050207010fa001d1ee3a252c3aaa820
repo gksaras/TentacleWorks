@@ -1,0 +1,70 @@
+package com.bankanalyzer.BankStatementAnalyzer_Gokulnath_K;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class BankUser { // Setting Data to POJO Class and Prints User Details( Note: Valid Credentials)
+
+	public void check_And_Print(String csvFile) throws NumberFormatException, IOException {
+
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+
+		ArrayList<UserDetails> list = new ArrayList<UserDetails>();
+
+		UserDetails detail = new UserDetails();
+		detail.setUserName("Joseph");
+		detail.setPassword("JosephBank#007");
+		detail.setAccNo(3265160710839l);
+		detail.setIfsc("SBI0001295");
+		detail.setPhone(9871424103l);
+		detail.setAddress("177A, Bleecker Street, Manhattan's Greenwich Village - 600616");
+
+		list.add(detail);
+
+		System.out.println("Enter UserName : ");
+		String user = sc.nextLine();
+		System.out.println("Enter Password : ");
+		String pass = sc.nextLine();
+
+		CSVParser parser = new CSVParser();
+
+		for (UserDetails bank : list) {
+
+			if (bank.getUserName().equals(user) && bank.getPassword().equals(pass)) {
+
+				System.out.println("\nUser Details.....\n" 
+						+ "Name : " + bank.getUserName() 
+						+ "\n" + "Password : "+ bank.getPassword() 
+						+ "\n" + "Acc.No : " + bank.getAccNo() 
+						+ "\n" + "IFSC : " + bank.getIfsc()
+						+ "\n" + "Phone : " + bank.getPhone() 
+						+ "\n" + "Address : " + bank.getAddress());
+
+				System.out.println("\nDo you want to print All Transaction Details (y/n) : ");
+
+				String option = sc.nextLine();
+
+				if (option.equals("y")) {
+
+					parser.readCSV_And_ParseData(csvFile);
+				}
+				else {
+					System.out.println("Thanks for Connecting.....");
+				}
+
+			}
+
+			else {
+				System.out.println("Un-Authorized User");
+				System.out.println("You are not allowed do banking!");
+				System.out
+						.println("Please create Account (or) Incase of Wrong user Credentials, Enter Valid credential");
+				System.out.println("\n Thanks for Connecting.....");
+			}
+		}
+
+	}
+
+}

@@ -1,0 +1,28 @@
+package com.springverse.SpringDemo;
+
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+
+/**
+ * Unit test for simple App.
+ */
+
+@ExtendWith(SpringExtension.class)
+@ContextCon
+public class AppTest 
+{
+
+	@Autowired
+	private ApplicationContext context;
+	
+	@Test
+	public void testJackInSpringContext() {
+		Sparrow bean_sparrow = context.getBean(Sparrow.class);
+		assertEquals("Jack",bean_sparrow.getName());
+	}
+	
+}

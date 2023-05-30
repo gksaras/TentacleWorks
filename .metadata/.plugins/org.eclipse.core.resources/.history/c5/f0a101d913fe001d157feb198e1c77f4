@@ -1,0 +1,29 @@
+package com.springverse.SpringDemo.classes;
+
+public class Marvel {
+
+	private byte phase;
+	private String project;
+	
+	public Marvel(byte phase,String project) {
+		this.phase = phase;
+		this.project = project;
+	}
+
+	public byte getPhase() {
+		return phase;
+	}
+
+	public String getProject() {
+		return project;
+	}
+
+	
+	
+	@Override
+	public String toString() {
+		return "Phase = "+phase+"\n"
+				+"Project = "+project;
+	}
+	
+}

@@ -1,0 +1,13 @@
+package com.bankanalyzer.BankStatementAnalyzer_Gokulnath_K;
+
+public class CSVParser implements FilterData{
+
+	
+
+	@Override
+	public void filter_And_Summarize() {
+		
+		
+	}
+
+}

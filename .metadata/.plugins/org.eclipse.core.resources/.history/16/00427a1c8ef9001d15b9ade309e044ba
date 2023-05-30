@@ -1,0 +1,13 @@
+
+package com.bankanalyzer.BankStatementAnalyzer_Gokulnath_K;
+
+public class UserDetails {
+
+	private String userName;
+	private String password;
+	private long accNo;
+	private String ifsc;
+	private long phone;
+	private String address;
+	
+}

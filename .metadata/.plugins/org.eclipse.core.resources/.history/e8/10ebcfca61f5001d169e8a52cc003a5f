@@ -1,0 +1,28 @@
+package com.jdbc;
+
+public class PreparedStatementExample {
+
+	private void test_1() {
+
+	}
+
+	private void test_2() {
+
+	}
+
+	private void test_3() {
+
+	}
+
+	private void test_4() {
+
+	}
+
+	private void test_5() {
+
+	}
+
+	public static void main(String[] args) {
+
+	}
+}

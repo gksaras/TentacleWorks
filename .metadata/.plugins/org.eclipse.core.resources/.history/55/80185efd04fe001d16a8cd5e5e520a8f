@@ -1,0 +1,5 @@
+package com.springverse.SpringDemo;
+
+public @interface ContextConfiguration {
+
+}

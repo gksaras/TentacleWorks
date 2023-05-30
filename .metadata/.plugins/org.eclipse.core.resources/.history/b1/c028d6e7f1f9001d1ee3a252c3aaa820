@@ -1,0 +1,37 @@
+package com.bankanalyzer.BankStatementAnalyzer_Gokulnath_K;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+public class App 
+{
+    public static void main( String[] args ) throws NumberFormatException, IOException
+    {
+    	String csvFile = "E:\\bank.csv";
+    	
+    	Scanner sc = new Scanner(System.in);
+    	
+        System.out.println( "Bank Statement Analyzer....." );
+        
+        
+        BankUser bank = new BankUser();
+        bank.check_And_Print();
+        
+//        System.out.println("\n Do you want to print All Transaction Details (y/n) : ");
+//        
+//        String option = sc.nextLine();
+//        
+//        if(option.equals("y")) {
+//        	 
+//        	System.out.println("\nAll Transaction Details.....");
+//              CSVParser parser = new CSVParser();
+//              parser.readCSV_And_ParseData(csvFile);
+// 
+//        }
+//        
+        
+      
+        
+        
+    }
+}

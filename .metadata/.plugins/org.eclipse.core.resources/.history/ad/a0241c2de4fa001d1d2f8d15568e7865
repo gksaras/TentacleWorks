@@ -1,0 +1,26 @@
+package coupling;
+
+interface Comics{
+	
+	void read_comic();
+}
+
+class Marvel implements Comics {
+
+	@Override
+	public void read_comic() {
+		System.out.println("Spider-Man");
+	}
+}
+
+class DCEU implements Comics {
+
+	@Override
+	public void read_comic() {
+		System.out.println("Bat-Man");
+	}
+}
+
+public class LooseCoupling {
+
+}

@@ -1,0 +1,8 @@
+package com.bankanalyzer.BankStatementAnalyzer_Gokulnath_K;
+
+import java.util.ArrayList;
+
+public interface FilterData { // Explicit API
+
+	void filter_And_Summarize(ArrayList<Transaction> List);
+}

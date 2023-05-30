@@ -1,0 +1,21 @@
+package com.bankanalyzer.BankStatementAnalyzer_Gokulnath_K;
+
+import java.io.IOException;
+
+public class App 
+{
+    public static void main( String[] args ) throws NumberFormatException, IOException
+    {
+        System.out.println( "Bank Statement Analyzer....." );
+        
+        BankUser bank = new BankUser();
+        bank.check_And_Print();
+        
+        String csvFile = "E:\\bank.csv";
+        
+        CSVParser parser = new CSVParser();
+        parser.readCSV_And_ParseData(csvFile);
+        
+        
+    }
+}

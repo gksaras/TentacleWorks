@@ -1,0 +1,33 @@
+package com.bankanalyzer.BankStatementAnalyzer_Gokulnath_K;
+
+import java.util.ArrayList;
+
+public class BankUser {
+	
+	public static void main(String args[]) {	
+		
+	ArrayList<UserDetails> list = new ArrayList<UserDetails>();
+	
+	UserDetails detail = new UserDetails();
+	detail.setUserName("Joseph");
+	detail.setPassword("JosephBank#007");
+	detail.setAccNo(3265160710839l);
+	detail.setIfsc("SBI0001295");
+	detail.setPhone(9871424103l);
+	detail.setAddress("177A, Bleecker Street, Manhattan's Greenwich Village - 600616");
+		
+	
+	
+	for (UserDetails bank : list) {	
+			
+			System.out.println("Name : "+bank.getUserName()+"\n"
+						+"Password : "+bank.getPassword()+"\n"
+						+"Acc.No : "+bank.getAccNo()+"\n"
+						+"IFSC : "+bank.getIfsc()+"\n"
+						+"Phone : "+bank.getPhone()+"\n"
+						+"Address : "+bank.getAddress());
+		}
+
+	}
+	}
+

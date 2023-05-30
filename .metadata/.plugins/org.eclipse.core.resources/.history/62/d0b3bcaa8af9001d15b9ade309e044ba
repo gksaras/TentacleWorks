@@ -1,0 +1,42 @@
+package com.bankanalyzer.BankStatementAnalyzer_Gokulnath_K;
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+
+import com.opencsv.CSVReader;
+
+public class CSVParser{
+
+	ArrayList<Transaction> transactionList = new ArrayList<Transaction>();
+	
+	public void readCSV_And_ParseData( String csvFile) throws NumberFormatException, IOException {
+
+
+		DateTimeFormatter DATE_PATTERN = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+		
+			
+		CSVReader reader = null;
+
+			reader = new CSVReader(new FileReader(csvFile));
+			String[] line;
+			while ((line = reader.readNext()) != null) {
+				
+				 System.out.println("date = "+line[0]+", amount = "+line[1]+", description ="+line[2]);
+				
+				Transaction transact = new Transaction();
+				transact.setDate(LocalDate.parse(line[0], DATE_PATTERN));
+				transact.setAmount(Double.parseDouble(line[1]));
+				transact.setDescription(line[2]);
+				transactionList.add(transact);
+				
+			}	
+			
+			FilterData s = new Summarize();
+			s.filter_And_Summarize(transactionList);
+	}
+	
+}

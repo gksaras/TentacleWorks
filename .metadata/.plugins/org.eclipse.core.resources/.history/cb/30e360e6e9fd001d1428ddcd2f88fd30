@@ -1,0 +1,14 @@
+package com.springverse.SpringDemo.config;
+
+import com.springverse.SpringDemo.Sparrow;
+
+public class SpringConfig {
+
+	Sparrow parley() {
+		var s = new Sparrow();
+		
+		s.setName("Jack");
+		
+		return s;
+	}
+}

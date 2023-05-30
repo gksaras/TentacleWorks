@@ -1,0 +1,63 @@
+package com.bankanalyzer.BankStatementAnalyzer_Gokulnath_K;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+import com.opencsv.CSVReader;
+import com.opencsv.CSVWriter;
+
+public class Summarize implements FilterData { // This class Follows Open_Closed Principle
+	
+	
+	String txt = "E:\\Report.txt";
+	
+	@Override
+	public void filter_And_Summarize(ArrayList<Transaction> List) {
+
+		double sum = 0;
+		int count = 0;
+		
+		System.out.println();
+		System.out.println("Filtered Data.....");
+		
+		for (Transaction bank : List) {
+
+			if (bank.getDate().equals(LocalDate.of(2022, 05, 30))) {
+				System.out.print("date : " + bank.getDate() + ", ");
+				System.out.print("amount : " + bank.getAmount() + ", ");
+				System.out.print("description : " + bank.getDescription());
+				System.out.println();
+
+				sum += bank.getAmount();
+				count++;
+		
+				try{
+					
+					CSVReader r = null;
+					while(r.readNext()!=null) {
+						
+						FileWriter w = new FileWriter(txt);
+						w.write("date = "+bank.getDate());
+						w.write("date = "+bank.getAmount());
+						w.write("date = "+bank.getDescription());
+						
+					}
+				} catch (Exception e) {
+					
+				}
+			}
+			
+		}
+		System.out.println();
+		System.out.println("Summarized Data.....");
+		System.out.println("Sum of Transcations for Filtered Data => " + sum);
+		System.out.println("Average of all Sum for Filtered Data => " + sum / count);
+		
+		System.out.println("\nThanks For Connecting.....");
+	}
+
+}

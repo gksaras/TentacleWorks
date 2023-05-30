@@ -1,0 +1,34 @@
+package coupling;
+
+interface Comics{
+	
+	void read_comic();
+}
+
+class Sony implements Comics {
+
+	@Override
+	public void read_comic() {
+		System.out.println("Spider-Man");
+	}
+}
+
+class DCStudios implements Comics {
+
+	@Override
+	public void read_comic() {
+		System.out.println("Bat-Man");
+	}
+}
+
+public class LooseCoupling {
+
+	public static void main(String[] args) {
+		
+		Sony s = new Sony();
+		s.read_comic();
+		
+		DCStudios d = new DCStudios();
+		d.read_comic();
+	}
+}

@@ -1,0 +1,17 @@
+package com.bankanalyzer.BankStatementAnalyzer_Gokulnath_K;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Report extends Summarize {
+
+	
+	void generate_Report() throws IOException {
+		
+		BufferedWriter bf = new BufferedWriter(new FileWriter("E:\\Report.txt"));
+		
+		String[] read;
+		
+	}
+}

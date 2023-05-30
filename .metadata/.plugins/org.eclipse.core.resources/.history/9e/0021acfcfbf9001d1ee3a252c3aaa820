@@ -1,0 +1,18 @@
+package com.bankanalyzer.BankStatementAnalyzer_Gokulnath_K;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.Writer;
+
+public class Report extends Summarize {
+
+	
+	void generate_Report() {
+		
+		File f = new File("E:\\Report.txt");
+		
+		Writer w = new FileWriter("E:\\Report.txt");
+		w.append(bank)
+		
+	}
+}

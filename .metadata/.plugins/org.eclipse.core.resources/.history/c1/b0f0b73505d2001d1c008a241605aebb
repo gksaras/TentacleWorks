@@ -1,0 +1,14 @@
+package com.tentech;
+
+public class Employee {
+	Address address;
+	
+	//Employee(){
+		//address=new address();
+	//}
+	
+	Employee(Address address){
+		this.address=address;
+	}
+
+}

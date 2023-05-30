@@ -1,0 +1,18 @@
+package com.springverse.SpringDemo;
+
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+
+/**
+ * Unit test for simple App.
+ */
+
+//@ExtendWith(SpringExtension.class)
+//@ContextCon
+public class AppTest 
+{
+
+	
+}

@@ -1,0 +1,46 @@
+package com.bankanalyzer.BankStatementAnalyzer_Gokulnath_K;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class BankUser {
+	
+	public void setDetails() {
+		
+	Scanner sc = new Scanner(System.in);	
+		
+	List<UserDetails> list = new ArrayList<>();
+	
+	UserDetails detail = new UserDetails();
+	detail.setUserName("Joseph");
+	detail.setPassword("JosephBank#007");
+	detail.setAccNo(3265160710839l);
+	detail.setIfsc("SBI0001295");
+	detail.setPhone(9871424103l);
+	detail.setAddress("177A, Bleecker Street, Manhattan's Greenwich Village - 600616");
+	
+//	sc.nextLine();
+//	String user = sc.next();
+//	sc.nextLine();
+//	String password = sc.next();
+	
+	System.out.println(list.get(0));
+	//if(list.get(0).equals(user) && list.get(1).equals(password)) {
+	
+	for (UserDetails bank : list) {	
+			System.out.println("Name : "+bank.getUserName()+"\n"
+						+"Password : "+bank.getPassword()+"\n"
+						+"Acc.No : "+bank.getAccNo()+"\n"
+						+"IFSC : "+bank.getIfsc()+"\n"
+						+"Phone : "+bank.getPhone()+"\n"
+						+"Address : "+bank.getAddress());
+		}
+//	}
+//		else {
+//			System.out.println("Un-Authorized User!");
+//		}
+//	}
+	}
+	}
+
